@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#090B18" />
+  <title>Life RPG</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+
+  <!-- SCREEN 1: SPLASH -->
+  <section id="screen-splash" class="screen screen--active screen--splash">
+    <div class="splash-logo" aria-hidden="true">⚔️</div>
+    <h1 class="splash-title">LIFE RPG</h1>
+    <p class="splash-subtitle">Level up yourself</p>
+    <div class="loading-bar">
+      <div class="loading-bar__fill"></div>
+    </div>
+    <p class="loading-label">Loading...</p>
+  </section>
+
+  <!-- PERMISSION PRE-PROMPT (custom screen, shown before native dialog) -->
+  <section id="screen-permission-prompt" class="screen screen--permission">
+    <h2 class="permission-title">Welcome Hero!</h2>
+    <p class="permission-lead">Life RPG needs:</p>
+
+    <div class="permission-item">
+      <span class="permission-item__icon" aria-hidden="true">🔔</span>
+      <div>
+        <div class="permission-item__title">Notifications</div>
+        <div class="permission-item__desc">To remind you about daily quests.</div>
+      </div>
+    </div>
+
+    <div class="permission-item">
+      <span class="permission-item__icon" aria-hidden="true">💾</span>
+      <div>
+        <div class="permission-item__title">Storage</div>
+        <div class="permission-item__desc">To safely save your progress.</div>
+      </div>
+    </div>
+
+    <button id="permission-continue-btn" class="primary-btn">Continue</button>
+  </section>
+
+  <!-- SCREEN 2: CHARACTER CREATION -->
+  <section id="screen-character-creation" class="screen screen--character-creation">
+    <h2 class="section-title">Create Your Hero</h2>
+
+    <div class="avatar-circle" aria-hidden="true">
+      <span id="creation-avatar-icon">🧑</span>
+    </div>
+
+    <label class="field-label" for="hero-name-input">Name</label>
+    <input id="hero-name-input" class="text-input" type="text" placeholder="Enter your hero's name" maxlength="20" />
+
+    <p class="field-label field-label--spaced">Choose Class</p>
+    <div class="class-grid">
+      <button class="class-card" data-class-id="warrior">
+        <span class="class-card__icon">⚔️</span>
+        <span class="class-card__label">Warrior</span>
+      </button>
+      <button class="class-card" data-class-id="mage">
+        <span class="class-card__icon">🔮</span>
+        <span class="class-card__label">Mage</span>
+      </button>
+      <button class="class-card" data-class-id="ninja">
+        <span class="class-card__icon">🥷</span>
+        <span class="class-card__label">Ninja</span>
+      </button>
+      <button class="class-card" data-class-id="explorer">
+        <span class="class-card__icon">🧭</span>
+        <span class="class-card__label">Explorer</span>
+      </button>
+    </div>
+
+    <p id="character-creation-error" class="error-text" role="alert"></p>
+
+    <button id="character-continue-btn" class="primary-btn">Continue</button>
+  </section>
+
+  <!-- SCREEN 3: HOME DASHBOARD -->
+  <section id="screen-home" class="screen screen--home">
+    <div class="player-card">
+      <div class="player-card__avatar" id="player-avatar-icon" aria-hidden="true">⚔️</div>
+      <div class="player-card__info">
+        <div class="player-card__name" id="player-name">Hero</div>
+        <div class="player-card__level" id="player-level-line">Level 1</div>
+      </div>
+      <div class="player-card__coins">
+        <span aria-hidden="true">🪙</span>
+        <span id="player-coins">0</span>
+      </div>
+    </div>
+
+    <div class="xp-container">
+      <div class="xp-fill" id="xp-fill"></div>
+    </div>
+    <div class="xp-label" id="xp-label">0 / 1000 XP</div>
+
+    <h3 class="quests-heading">Today's Quests</h3>
+    <div id="quest-list" class="quest-list"></div>
+
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <button class="bottom-nav__btn bottom-nav__btn--active" aria-current="page">
+        <span aria-hidden="true">🏠</span>Home
+      </button>
+      <button class="bottom-nav__btn" disabled title="Coming soon">
+        <span aria-hidden="true">🧑</span>Hero
+      </button>
+      <button class="bottom-nav__btn" disabled title="Coming soon">
+        <span aria-hidden="true">📜</span>Quest
+      </button>
+      <button class="bottom-nav__btn" disabled title="Coming soon">
+        <span aria-hidden="true">🌟</span>Skills
+      </button>
+      <button class="bottom-nav__btn" disabled title="Coming soon">
+        <span aria-hidden="true">⋯</span>More
+      </button>
+    </nav>
+  </section>
+
+  <!-- Toasts -->
+  <div id="levelup-toast" class="toast toast--levelup">
+    <span class="toast__text">Level Up!</span>
+  </div>
+  <div id="repair-toast" class="toast toast--repair">
+    <span class="toast__text">Your adventure data was repaired.</span>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

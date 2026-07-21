@@ -1,0 +1,20 @@
+{
+  "appId": "com.liferpg.app",
+  "appName": "Life RPG",
+  "webDir": "www",
+  "backgroundColor": "#090B18",
+  "android": {
+    "allowMixedContent": false,
+    "backgroundColor": "#090B18"
+  },
+  "plugins": {
+    "LocalNotifications": {
+      "smallIcon": "ic_stat_sword",
+      "iconColor": "#7C4DFF"
+    },
+    "CapacitorSQLite": {
+      "iosDatabaseLocation": "Library/CapacitorDatabase",
+      "androidIsEncryption": false
+    }
+  }
+}
