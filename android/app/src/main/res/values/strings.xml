@@ -3,5 +3,5 @@
     <string name="app_name">Life RPG</string>
     <string name="title_activity_main">Life RPG</string>
     <string name="package_name">com.liferpg.app</string>
-    <string name="custom_url_scheme">com.liferpg.app</string>
+    <string name="custom_url_scheme">capacitor</string>
 </resources>
